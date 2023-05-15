@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0515외부스크립트</title>
+    <script src="js/0515-1.js"></script>
+    <!-- <script src="js/0515.js"></script> -->
+
+</head>
+<body>
+    <h3>덧셈 계산기</h3>
+    <form name="mtform"acrion="..." method="POST">
+        첫번째 정수:
+        <input id="x"><br>
+        두번째 정수:
+        <input id="y"><br>
+        합계     :
+        <input id="sum"/><br>
+        <input type="button" value="계산" onclick="calc();"/>
+    </form>
+    <script>
+        function calc(){
+            var x =document.getElementById("x").value;
+
+            var y =document.getElementById("y").value;
+            var sum;
+
+            sum=parseInt(x)+parseInt(y);
+            document.getElementById("sum").value = sum;
+        }
+    </script>
+
+    <h1 id="test">This is a heading</h1>
+    <script>
+        function func(){
+            e=document.getElementById("test");
+            e.style.color="red";
+        }
+    </script>
+    <button type="button" onclick="func()">클릭하세요!</button>
+    <script>
+    var msg="";
+    var time = new Date().getHours();
+    if(time<12){
+        msg="Good Morning!";
+    }
+    else if(time < 18){
+        msg="Good Afternoon!";
+    }
+    else{
+        msg="Good evening";
+    }
+    alert(msg);
+    </script>
+
+    <script>
+        var grade=prompt("성적을 입력하시오","A-F사이의 문자로");
+        switch (grade){
+            case 'A':alert("잘했어요!");
+            break;
+            case 'B':alert("좋은 점수군요");
+            break;
+            case 'C':alert("괜찮은 점수군요");
+            break;
+            case 'D':alert("좀더 노력하세요");
+            break;
+            case 'F':alert("다음학기 수강하세요");
+            break;
+            default:alert("알수없는 학점입니다.");
+        }
+    </script>
+
+    <h1>글자확대축소하기</h1>
+    <button id="large">확대</button>
+    <button id="small">축소</button>
+
+    <p id="text">welcome to my world</p>
+    <script>
+        var large=document.getElementById('large');
+        var small=document.getElementById('small');
+        var text=document.getElementById('text');
+        var num=12; // 글자 기본값 지정
+
+        //font-size -> fontSize
+        large.onclick=function(){
+            text.style.fontSize=num+'px';
+            num++;
+        }
+        small.onclick=function(){
+            text.style.fontSize=num+'px';
+            num--;
+        }
+
+    </script>
+</body>
+</html>
