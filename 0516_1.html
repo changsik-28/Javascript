@@ -13,8 +13,11 @@
     <button id="button1">되돌리기</button><hr>
     <button id="box">party</button><hr>
     <button onclick="chColor(this,'red')">red버튼</button>
-    <button onclick="chColor(this,'blue')">blue버튼</button>
-    <button onclick="chColor(this,'green')">green버튼</button>
+    <button onclick="chColor(this,'blue')"id="bg">blue버튼</button>
+    <button onclick="chColor(this,'green')" id="bg">green버튼</button>
+    <hr>
+    <button onmouseover="chColor2(this,'yellow')" 
+    onmouseout="chColor2(this,'pink')">색상변경 버튼</button>
 
     <div></div>
     <script>
@@ -22,6 +25,10 @@
             console.log(color+"가 적용됨");
             obj.style.color=color;
         }
+        function chColor2(obj,colorname){
+            obj.style.backgroundColor=colorname;
+        }
+
 
 
 
