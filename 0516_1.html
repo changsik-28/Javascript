@@ -25,11 +25,10 @@
             console.log(color+"가 적용됨");
             obj.style.color=color;
         }
+        //색상변경 버튼
         function chColor2(obj,colorname){
             obj.style.backgroundColor=colorname;
         }
-
-
 
 
         var color=["red","pink","blue","orange","gold","gray"];
@@ -64,6 +63,22 @@
             i=i%color.length;
             div.style.backgroundColor=color[i];
             i++;
+        }
+    </script>
+    <img src="img/강태리.png" id="img" style="width:300px;height:400px;">
+    <br>
+    <button onclick="chimg()">바꾸기</button>
+    <script>
+        var i=0;
+        function chimg(){
+            if(i%2==0){
+            img.src="img/강태리1.png";
+            img.style.width="300px";
+            img.style.height="400px";
+            }else{
+                img.src="img/강태리.png";
+            }
+            i++
         }
     </script>
 </body>

@@ -101,3 +101,66 @@ myFunc1();
 //     overflow();
 // }
 // overflow();
+
+//화살표 함수
+//() => {}
+function showError(){
+    console.log("error1.....")
+}
+showError();
+
+var showError=function(){
+    console.log("error2.....")
+}
+showError();
+
+var showError=()=>{
+    console.log("error3.....")
+}
+showError();
+
+var showName=function(name){
+    var msg=`Hello,${name}`
+    console.log(msg);
+}
+showName("임성혁");
+
+var showName=(name)=>{
+    var msg=`Hello,${name}`
+    console.log(msg);
+}
+showName("임성혁");
+
+var add=function(num1,num2){
+    const result=num1+num2;
+    return result;
+}
+console.log(add(5,3));
+
+var add=(num1,num2)=>{
+    const result=num1+num2;
+    return result;
+}
+console.log(add(15,76));
+
+var add=function(num1,num2){
+    return num1+num2;
+}
+console.log(add(5,18));
+
+var add=(num1,num2)=>{
+    return num1+num2;
+}
+console.log(add(5,18));
+
+var add=(num1,num2)=>num1+num2;
+console.log(add(15,3));
+
+var sayHello=function(name){
+    return name;
+}
+console.log(sayHello("김건호"));
+
+var sayHello=name=>name;
+console.log(sayHello("최경식"));
+// var 함수명=인수=>리턴값;
