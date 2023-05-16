@@ -143,3 +143,20 @@ for(var key in 고양이){
 for(var i in 고양이){
     document.write(i+ " : " +고양이[i]+ "<br>");
 }
+
+//사람을 정의
+
+var person={
+    age : 28,
+    name : "양창식",
+    birthDay : "07-10",
+    hoppy : "internet game",
+    eat(food="밥"){
+        return this.name+"이"+food+"을 먹고 "+this.hoppy+"을 했다";
+    }
+}
+document.write(person.eat("소고기")+"<br>");
+
+for(var i in person){
+    document.write(i+ " : " +person[i]+"<br>");
+}

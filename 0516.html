@@ -8,6 +8,47 @@
     <script src="js/0516.js"></script>
 </head>
 <body>
-    
+    <img src="img/강태리.png" id="img" style="width:300px;height:400px;">
+    <h1 id="h1">나는 누구인가?(클릭금지)</h1>
+
+    <script>
+        var human={
+            name : "강태리",
+            age : "33살"
+        }
+
+        // var img=document.getElementById('img');
+        // var h1=document.getElementById('h1');
+
+        //id는 하나이기때문에 위에 id를 줬음으로 
+        //getElementById 는 사용하지않아도된다.
+
+        //만약에 id를 안줬을경우에는 getElementsByTagName('img')
+        //로 저장을 해서 밑에 img[0]번쨰.onclick=function
+        //사용하면 된다 이미지같은경우에는 몇번째인지 모르니깐
+
+
+        var i=0;
+        img.onclick=function(){
+            if(i%2==0){//나머지가 0이면
+            h1.innerHTML=human.name+"이고 "+human.age+"입니다.";
+            }else{
+                h1.innerHTML="나는 누구인가?";
+            }
+            i++;
+        }
+
+        // 이미지에 마우스를 올릴때 사진교채하기
+        img.onmouseover=function(){
+            this.src="img/강태리1.png"
+            this.width=300; //img 태그의 widht 속성 변경
+            this.height=400;
+        }
+        img.onmouseout=function(){
+            this.src="img/강태리.png"
+            this.style.width='300px'; //img태그의 css style 을 변경
+            this.height=400;
+        }
+    </script>
 </body>
 </html>
