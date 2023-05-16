@@ -152,7 +152,7 @@ var person={
     birthDay : "07-10",
     hoppy : "internet game",
     eat(food="밥"){
-        return this.name+"이"+food+"을 먹고 "+this.hoppy+"을 했다";
+        return this.name+"이 "+food+"을 먹고 "+this.hoppy+"을 했다";
     }
 }
 document.write(person.eat("소고기")+"<br>");

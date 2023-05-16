@@ -49,6 +49,43 @@
             this.style.width='300px'; //img태그의 css style 을 변경
             this.height=400;
         }
+        var i=0;
+        img.ondblclick=function(){
+            if(i%2==0){
+            h1.style.backgroundColor="pink";
+            h1.style.border="5px double blue";
+            h1.style.padding="10px";
+            h1.style.borderRadius="30px";
+            }else{
+                
+            }
+            i++;
+        }
+    </script>
+    <table border="3">
+        <tr>
+            <td>섭씨온도</td>
+            <td>화씨온도</td>
+        </tr>
+        <script>
+            for(celsiur = 0;celsiur<=10;celsiur=celsiur+1){
+                document.write("<tr><td>"+celsiur+"</td><td>"+((celsiur*9.0/5)+32)+"</td></tr>");
+            }
+        </script>
+    </table>
+    <script>
+        document.write("<h1>구구단표</h1>");
+        document.write("<table border=2 width=50%>");
+
+        for(var i =1;i<=9;i++){
+            document.write("<tr>");
+            document.write("<td>"+i+"</td>");
+            for(var j =2;j<=9;j++){
+                document.write("<td>"+i*j+"</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
     </script>
 </body>
 </html>

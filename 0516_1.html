@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/0516_1.js"></script>
+</head>
+<body>
+    <h2>버튼을 클릭을 했을때 배경색 변경하기</h2>
+    <button id="button">버튼</button>
+    <button id="button1">되돌리기</button><hr>
+    <button id="box">party</button><hr>
+    <button onclick="chColor(this,'red')">red버튼</button>
+    <button onclick="chColor(this,'blue')">blue버튼</button>
+    <button onclick="chColor(this,'green')">green버튼</button>
+
+    <div></div>
+    <script>
+        function chColor(obj,color){
+            console.log(color+"가 적용됨");
+            obj.style.color=color;
+        }
+
+
+
+        var color=["red","pink","blue","orange","gold","gray"];
+
+        var body=document.getElementsByTagName('body')[0]; // 배열
+        var body=document.querySelector('body');
+        
+        //객체.이벤트타입=이벤트리스너;
+        var i=0;
+        button.onclick=function(){
+            i = i % color.length; //0,1,2,3,4,5
+            // if(i>=5) i=0;
+            body.style.backgroundColor=color[i];
+            i++;
+        }
+        var color1=["white"];
+        button1.onclick=function(){
+            body.style.backgroundColor=color1[0];
+        }
+        //버튼 하나 만들어서, div박스 하나 생성해서 버튼 클릭하면 div박스 색상 변경하기
+        var div=document.querySelector('div');
+
+        div.style.width="300px";
+        div.style.height="300px";
+        div.style.margin="50px";
+
+        var color=["red","pink","blue","orange","gold","gray"];
+
+
+        var i=0;
+        box.onclick=function(){
+            i=i%color.length;
+            div.style.backgroundColor=color[i];
+            i++;
+        }
+    </script>
+</body>
+</html>
