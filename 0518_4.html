@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Marin(level,name,종족,life){
+        this.life=life;
+        this.name=name;
+        this.level=level;
+        this.종족=종족;
+        this.fire=function(){
+            this.level += 1;
+            if (this.level<3){
+                document.write(this.name+"이 공격합니다.<br>");
+            }else{
+                document.write(this.name+ "이 스팀팩을 창착했습니다.<br>")
+            }
+        }
+        this.defend=function(){
+            this.life -= 5;
+            console.log(this.life);
+            if(this.life<0)
+            document.write("마린이 전사했습니다.<br>")
+        }
+        this.fire2=function(){
+            this.level += 1;
+            if(this.level<10){
+                document.write(this.name+"이 힐을합니다.<br>")
+            }else(
+                document.write(this.name+"이 체력을 다 채웠습니다.<br>")
+            )
+        }
+        this.defend2=function(){
+            this.life -= 5;
+            if(this.life<0)
+            document.write("메딕이 사망했습니다.<br>")
+        }
+        this.정찰=function(){
+            document.write("정찰을 나갑니다.");
+        }
+        }
+        var 마린1=new Marin(1,"마린","테란",10);
+        마린1.fire();마린1.fire();마린1.fire();마린1.fire();
+        마린1.defend();마린1.defend();마린1.defend();
+        var 마린2=new Marin(1,"파이어벳","테란",10);
+        마린2.fire();마린2.fire();마린2.fire();마린2.fire();마린2.fire();마린2.fire();
+        마린2.defend();마린2.defend();마린2.defend();
+        var 메딕1=new Marin(1,"메딕","테란",15);
+        메딕1.fire2();메딕1.fire2();메딕1.fire2();메딕1.fire2();메딕1.fire2();메딕1.fire2();메딕1.fire2();메딕1.fire2();메딕1.fire2();
+        메딕1.defend2();메딕1.defend2();메딕1.defend2();메딕1.defend2();
+
+        // setInterval(마린1.정찰,3000);
+    </script>
+</body>
+</html>
