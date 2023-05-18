@@ -164,3 +164,5 @@ console.log(sayHello("김건호"));
 var sayHello=name=>name;
 console.log(sayHello("최경식"));
 // var 함수명=인수=>리턴값;
+
+//화살표 함수와 일반함수의 차이점은 this에 잇다.
