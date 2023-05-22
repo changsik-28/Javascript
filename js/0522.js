@@ -322,20 +322,20 @@ function Grand(){}
     Father.재산='2억';
     document.write(`<h2> 아버지 재산 ${Father.재산} </h2>`);
 
-    function Mama(){}
+function Mama(){}
     var 엄마=new Mama();
 
     Mama.prototype.재산="5천만원";
     document.write(`<h2>엄마재산 ${엄마.재산} </h2>`);
     console.log(`<h2>엄마재산 ${엄마.재산} </h2>`);
 
-    function Son(){}
+function Son(){}
     Son.prototype=new Mama();
     var 아들=new Son();
     아들.prototype=엄마;
     document.write(`<h2>아들재산 ${아들.재산} </h2>`);
 
-    엄마.재산 = "만원";
+    엄마.재산 = "만원"; //prototype은 공유 엄마.재산은 그냥 엄마돈
     document.write(`<h2> 아들재산 ${아들.재산} </h2>`);
 
     Mama.prototype.재산 = "5억";
