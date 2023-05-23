@@ -192,3 +192,176 @@ console.log(과일);
 console.log(fruit);
 var 장바구니=과일.concat(fruit);
 console.log(장바구니);
+
+//forEach 배열 반복
+장바구니.forEach((item,index)=>{
+    console.log(`${index} : ${item}`);
+})
+
+//indexOf   lastIndexOf
+//앞에서부터 검색   뒤에서부터 검색
+var 과일=['사과','배','바나나','귤','딸기','바나나'];
+var fruit=['apple','straberry','banana','cherry'];
+console.log(과일.indexOf('바나나'));
+console.log(과일.lastIndexOf('바나나'));
+
+//includes() 포함하는지 확인
+console.log(과일.includes('귤'));
+console.log(과일.includes('토마토'));
+
+//find()    findIndex()
+//찾으면 true 없으면 undefind
+var result=과일.find(function(){
+
+})
+var result=과일.find((item)=>{
+    return item=='귤';
+})
+console.log('=='+result);
+
+var arr=[1,2,3,4,5,6,7,8,9];
+var result=arr.find((item)=>{
+    return item%2 == 0;
+})
+console.log('=='+result);
+
+var user=[
+    {name: '원빈1',age:30},
+    {name: '원빈2',age:10},
+    {name: '원빈3',age:40},
+    {name: '원빈4',age:13}
+]
+var result=user.find((a)=>{
+    if(a.age<15){
+        return true
+    }
+    return false
+})
+console.log(result);
+
+var result=user.findIndex((a)=>{
+    if(a.age<15){
+        return true
+    }
+    return false
+})
+console.log(result);
+
+//filter 만족하는 모든 요소를 배열로 반환한다.
+var result=user.filter((a)=>{
+    if(a.age<15){
+        return true
+    }
+    return false
+})
+console.log(result);
+//찾는 값이 있으면 true를 반환하고 result에 저장한다.
+//없으면 false를 반환하고 그다음 요소를 찾는다.
+
+var fruit=['apple','straberry','banana','cherry','coconut','blueberry'];
+//fruit 에서 글자가 7개 이상인 과일명만 추출하시오
+
+var result=fruit.filter((item)=>{
+    if(item.length>=7){
+        return true
+    }
+    return false
+})
+console.log(result);
+//줄인식
+//var result=fruit.filter((item)=>item.length <=5)
+//console.lof(result);
+
+//forEach 함수를 이용해서 fruit 의 데이터를
+//<ul> 태그에 <li> 태그 리스트로 삽입해보자
+//document.write()로 출력
+//<li>0 : apple</li>
+
+// 내가 한 방법
+// fruit.forEach((item,index)=>{
+//     document.write('<ul>');
+//     document.write(`<li>${index} : ${item} </li>`);
+//     document.write('</ul>');
+// })
+
+//원래 방법
+var output="<ul>";
+    fruit.forEach((item,index)=>{
+        output+=`<li>${index+1}번째 : ${item} </li>`
+    })
+output +="</ul>";
+
+document.write(output);
+
+//map 
+//함수를 받아 특정기능을 수행하고 새로운 배열을 반환한다.
+var user=[
+    {name: '원빈1',age:30},
+    {name: '원빈2',age:10},
+    {name: '원빈3',age:40},
+    {name: '원빈4',age:13}
+]
+var user2=user.map((a,i)=>{
+    return a.age>20
+})
+console.log(user2);
+
+var user2=user.map((a,i)=>{
+    return a.name+"님"+(a.age-1) + "살"
+})
+console.log(user2);
+console.log(user);
+
+//join, split
+var join=과일.join('-');
+document.write(join);
+document.write('<br>');
+document.write(과일);
+//배열안의 인덱스 사이의 끼워 넣는것
+
+var str='welcome,to,my,world'
+var split=str.split(',');
+document.write('<br>');
+document.write(split);
+
+var split=str.split('');
+document.write('<br>');
+document.write(split);
+
+//isArray()
+console.log(Array.isArray(과일));
+
+//sort()    reduce()
+var arr=[1,4,6,3,7,2];
+arr.sort();
+document.write("<br>");         //오름차순
+document.write(arr);
+
+arr.sort(function(a,b){
+    return b-a
+})                              //내림차순
+document.write('<br>');
+document.write(arr);
+
+var user=[
+    {name: '원빈',age:30},
+    {name: '장동권',age:10},
+    {name: '손흥민',age:40},
+    {name: '유재석',age:13},
+    {name: '김유나',age:23}
+]
+
+user.sort()
+document.write("<br>");
+console.log(user);
+
+user.sort(function(a,b){
+    if(a.name<b.name){
+        return -1;
+    }
+    if(a.name>b.name){
+        return 1;
+    }
+    return 0;
+})
+console.log(user);
