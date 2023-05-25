@@ -101,3 +101,31 @@ function del(){
 function reload(){
     location.reload();
 }
+
+//getFullYear()
+//getMonth()
+//getDate()
+var date=new Date();
+var year = date.getFullYear()
+var month=date.getMonth()+1;
+var day=date.getDate();
+var 요일=date.getDay();//일요일이 0
+
+switch(요일){
+   case 0 : 요일='일요일'
+   break;
+   case 1 : 요일='월요일'
+   break;
+   case 2 : 요일='화요일'
+   break;
+   case 3 : 요일='수요일'
+   break;
+   case 4: 요일='목요일'
+   break;
+   case 5: 요일='금요일'
+   break;
+   case 6: 요일='토요일'
+   break;
+}
+
+time.innerHTML=year+"년"+month+"월"+day+"일"+요일;
