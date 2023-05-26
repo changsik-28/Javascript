@@ -48,3 +48,16 @@ reader.onload=function(){
   document.getElementById('result').value =reader.result;
 }
 }
+
+function readFile2(){
+  var files=document.getElementById('input').files;
+
+  output='';
+  for(var i=0,f; f=files[i];i++){
+    output += f.name+'\n';
+    output += f.type+'\n';
+    output += f.size+'bytes\n';
+    output += f.lastModifiedDate+'\n';
+  }
+  document.getElementById('result').value=output;
+}
