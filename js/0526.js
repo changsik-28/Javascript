@@ -22,7 +22,7 @@ btn.addEventListener('click',function(){
     errText.innerHTML=''
     var val=numBox.value;
 
-    try{
+    try{ 
         if(val=='')throw " 비어있음 "
         if(isNaN(val)) throw ' 숫자가 아닙니다.'
         if(val<1)throw '숫자가 1이하입니다.'
@@ -40,3 +40,21 @@ btn.addEventListener('click',function(){
     }
     errText.style.color='red';
 })
+
+var num=123.123455
+try{
+    console.log(num.toFixed(3))
+    console.log(num.toPrecision(100))//RangeError toPrecision(101)
+    num=num+1;//ReferencError num=num+num2
+    // eval("alert('hellow')")//SyntaxError
+    // num.toUpperCase();//TypeError 
+    // 숫자를 대문자로 바꿀려고 하니깐 Type 이 아니다라는 에러
+    console.log(decodeURI('http://www.daum.net/aaa%%%'))
+    console.log(encodeURI('http://www.daum.net/$$$'))
+}catch(err){
+    errText2.innerHTML=err.name + ' : '+err.message
+    //에러텍스트2의 이너HTML 에 에러.네임을 주겠다
+}
+//toPrecision 수의 길이를 제한
+//toFixed 는 소수점의 길이를 제한
+errText2.style.color='red';
