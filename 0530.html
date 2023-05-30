@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트모델</title>
+    <script src="js/0530.event.js" defer></script>
+</head>
+<body>
+    <h1>자바스크립트 이벤트</h1>
+    <h1 id="header"><span>welcome(header)</span></h1>
+    <button id="btn1">버튼1</button>
+    <button id="btn2">버튼2</button>
+    <hr>
+    <div id="box"></div>
+    <div id="box2"></div>
+    <hr>
+    <button id="a">ButtonA</button>
+    <button id="b">ButtonB</button>
+    <button id="c">중지</button>
+    <button id="d">자동실행</button>
+    <h1>ButtonA-<span id="ca">0</span></h1>
+    <h1>ButtonB-<span id="cb">0</span></h1>
+    <a href="http://www.naver.com" id="naver" 
+    onclick="return false">네이버</a>
+    <a href="javascript:void(0)" id="daum">다음</a>
+    <a href="http://www.daum.net" id="daum2"
+    onclick="return daum()">다음</a>
+
+
+    <script>
+    function play(){
+        box.innerHTML += '이벤트핸들러사용'
+    }
+    function play2(){
+        box2.innerHTML += 'welcome to my world'
+    }
+    var btn1=document.getElementById('btn1');
+    var btn2=document.getElementById('btn2');
+    // btn1.onclick=play; // 고전이벤트 밑에서 다른 이벤트를 연결했기때문에 실행안됨
+    // btn2.onclick=play2; // 고전이벤트
+    // btn1.onclick=play2;  //버튼1에 이벤트 두개 연결
+
+    if(window.addEventListener){
+    btn1.addEventListener('click',play,false);
+    btn1.addEventListener('click',play2,false);
+    }else if(window.attachEvent){
+    btn1.attachEvent('onclick',play);
+    btn1.attachEvent('onclick',play2);
+    }
+    //크롬이면 addEventListener 익스플로러면 attachEvent를써라
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
