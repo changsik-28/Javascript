@@ -68,7 +68,7 @@ function handler(e){
 btn.addEventListener('click',handler,false);
 field.addEventListener('click',handler,false);
 body.addEventListener('click',function(e){
-    e.stopPropagation();
+    e.stopPropagation(); 
 },false);
 html.addEventListener('click',handler,false);
 // 이벤트전달방지
