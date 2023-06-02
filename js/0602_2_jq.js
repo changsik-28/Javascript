@@ -56,7 +56,7 @@ $('ul>li:first').css('border','3px solid red');
 //li:not(:first)    first 가 아닌거
 //li:nth-child(2n)
 //li:nth-of-type(2n)
-//li:contains(문자열)    특정문자열을 포함하는 거
+//li:contains (문자열)    특정문자열을 포함하는 거
 
 $('li:eq(5)').css('padding','10px');
 $('li:lt(3)').css('font-size','20px')//앞에서
@@ -64,3 +64,15 @@ $('li:gt(3)').css('font-size','30px')//뒤에서
 $('li:nth-child(2n)').css('color','red')
 $('li:nth-of-type(2n+1)').css('color','blue');
 $('li:contains("menu5")').css('border-radius','30px')
+
+//:has('strong') li 태그중에 strong태그가 있는 객체
+//$('li').closest('div')    li태그중에서 가장가까운 div태그
+//$('a,span')   복합선택자 a태그 , span 태그 선택
+//$('a','li') li태그에서 그 하위태그 a를 선택해라
+//$('li').find('a') 위에와 같은거
+//$('li a')
+
+$('li:has("span")').css('width','200px')
+$('li').closest('ul').css('padding','20px')
+$('a','li').css('font-weight','bold');
+$('li').find('a').css('font-style','italic');
