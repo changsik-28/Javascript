@@ -20,6 +20,26 @@ $(document).ready(function(){
 
 
 
+    var xml='';
+    xml +='<friends>'
+    xml +='<friend>'
+    xml +='<name>강감찬</name>'
+    xml +='<lang>HTML</lang>'
+    xml +='</friend>'
+    xml +='<friend>'
+    xml +='<name>이순신</name>'
+    xml +='<lang>CSS</lang>'
+    xml +='</friend>'
+    xml +='</friends>'
+    
+    var str2xml=$.parseXML(xml);
+    //each문을 이용해 xml 데이터를 화면에 출력하기
+    $(str2xml).find('friend').each(function(index){
+        var out='';
+        out+='<p>'+ $(this).find("name").text()+'</p>';
+        out+= '<strong>'+ $(this).find("lang").text() +'</strong>'
+        $('body').append(out);
+    })
 
 
 })//end
