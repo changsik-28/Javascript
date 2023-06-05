@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0605.html</title>
+    <script src="js/0605.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>call, apply, bind 에 대해서</h1>
+    <h2>바닐라자바스크립트 실습</h2>
+    <h2>이미지슬라이드 만들기</h2>
+    <div id="slider">
+        <div class="item">
+            <img src="img/강태리5.png">
+        </div>
+        <div class="item">
+            <img src="img/강태리6.png">
+        </div>
+        <div class="item">
+            <img src="img/강태리7.png">
+        </div>
+        <div class="item">
+            <img src="img/강태리8.png">
+        </div>
+        <div class="item">
+            <img src="img/강태리9.png">
+        </div>
+    </div>
+    <script>
+        const SHOW='show';
+        const firstSlide=document.querySelector('.item:first-child')
+        console.log(firstSlide)//제데로 선택됬는지 확인해준다.
+
+        function slide(){
+            var currentSlide=document.querySelector('.'+SHOW);
+            // var currentSlide=document.querySelector(`.${SHOW}`);위에꺼랑 같은것
+
+            if(currentSlide){
+                //현재슬라이드는 클래스 제거 
+                currentSlide.classList.remove(SHOW);
+                var nextSlide=currentSlide.nextElementSibling;
+
+                //다음슬라이드가 있으면 다음 슬라이드에 클래스를 추가하고
+                //없으면 처음슬라이드에 클래스를 추가한다.
+                if(nextSlide){
+                    nextSlide.classList.add(SHOW);
+                }else{
+                    firstSlide.classList.add(SHOW);
+                }
+            }else{
+                firstSlide.classList.add(SHOW);
+            }
+
+        }
+        slide();
+        var STOP=setInterval(slide,2000)
+        //mouse event 로 마우스를 올리면 슬라디 중지
+        //마우스가 다시 나가면 슬라이드 재게
+        var slider=document.getElementById('slider');
+        slider.addEventListener('mouseenter',function(){
+            clearInterval(STOP);
+        });
+        slider.addEventListener('mouseleave',function(){
+            STOP=setInterval(slide ,2000);
+        });
+
+    </script>
+</body>
+</html>
