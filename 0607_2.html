@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 드롭다운</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .dropbtn {
+        background-color: #3498db;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+      .dropbtn:hover,.dropbtn:focus {
+        background-color: #2980b9;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      .dropdown a:hover {
+        background-color: #ddd;
+      }
+      .show {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Clickabable Dropdown</h2>
+    <div class="dropdown">
+      <button onclick="dropDown('menu1')" class="dropbtn">Dropdown</button>
+      <div id="menu1" class="dropdown-content">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <script>
+        function dropDown(x){
+            document.getElementById(x).classList.toggle('show');
+            //add, remove, toggle
+        }
+
+        //바탕을 클릭하면 메뉴숨기기
+        window.onclick=function(){
+            //window를 클릭하는 거면 버튼도 이벤트가 사라지기 때문에
+            //dropdown 을 제외한 이벤트가 걸리면 show를 제거해라라고 설정을 줘야됨
+            if(!event.target.matches('.dropbtn')){
+            var dropContent=document.getElementsByClassName('dropdown-content');
+            for(var i=0;i<dropContent.length;i++){
+                if(dropContent[i].classList.contains('show')){
+                    dropContent[i].classList.remove('show');
+                };
+            }
+        }
+        }
+    </script>
+  </body>
+</html>
