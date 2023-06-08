@@ -111,3 +111,7 @@ $('#wrapper').after('<p>after</p>')
 $('<p>insertAfter</p>').insertAfter('#wrapper')
 $('#wrapper').before('<p>before</p>')
 $('<p>insertBefore</p>').insertBefore('#wrapper')
+
+//wrap()    개별적으로 감싸기 wrapAll() 전체 감싸기
+//unwrap()
+//clone() 복사하기
