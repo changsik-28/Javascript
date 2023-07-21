@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>큰 자리수와 낮은자리수 같은지 비교</h3>
+    <script>
+        var num= prompt("숫자를 입력하여주세요","양수만 입력해주세요");
+
+        if(isNaN(num)){
+            document.write(num+" : 은(는) 숫자가 아닙니다");
+        }else if(num<=0){
+            document.write(num+" : 음수나 0은 다루지 않습니다.")
+        }else{
+            var strNum = num.toString();
+            var firstDigit = strNum[0];
+            var lastDigit = strNum[strNum.length - 1];
+            if(firstDigit === lastDigit){
+                document.write(num+" : 같다")
+            }else{
+                document.write(num +" : 다르다")
+            }
+        }
+    </script>
+</body>
+</html>

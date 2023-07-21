@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        document.write("<h3>[]로 배열 만들기</h3>");
+
+        var plots = [20,5,8,15,20];
+        document.write("var plots = [20,5,8,15,20]<br>")
+
+        for(var i=0;i<plots.length;i++){
+            
+           for(var j=0;j<plots[i];j++){
+            document.write("*");
+           }
+           document.write(plots[i]+"<br>");
+
+        }
+        document.write("<hr>");
+
+        let degrees = new Array();
+
+        degrees[0] = 15.1;
+        degrees[1] = 15.4;
+        degrees[2] = 16.1;
+        degrees[3] = 17.5;
+        degrees[4] = 19,2;
+        degrees[5] = 21.4;
+
+        let sum=0;
+        for(i=0;i<degrees.length;i++){
+            sum+=degrees[i];
+        }
+        
+        document.write("<h3>Array 객체로 배열 만들기</h3>");
+        document.write("평균온도는 :"+(sum/degrees.length).toFixed(2)+"입니다");
+
+        function pr(msg,arr){
+            document.write(msg+arr.toString()+"<br>");
+        }
+        document.write("<h3>Array 객체의 메소드 활용</h3><hr>");
+        let a=new Array("황","김","이");
+        let b = new Array("박");
+        let c ;
+
+        pr("배열 a = ",a);
+        pr("배열 b = ",b);
+        document.write("<hr>");
+
+        c = a.concat(b); // 연결해주는것
+        pr("c = a.concat(b) 후 c = ",c);
+        pr("c = a.concat(b) 후 a = ",a+"<hr>");
+
+        c= a.join("##");
+        pr("c = a.join 후 c = ",c);
+        pr("c = a.join 후 a = ",a+"<hr>");
+
+        c= a.reverse();
+        pr("c = a.reverse 후 c = ",c);
+        pr("c = a.reverse 후 a = ",a+"<hr>");
+
+        c=a.slice(1,2);
+        pr("c = a.slice 후 c = ",c);
+        pr("c = a.slice 후 a = ",a+"<hr>");
+
+        c=a.sort(); //배열을 알파벳 순으로 정렬
+        pr("c = a.sort 후 c = ",c);
+        pr("c = a.sort 후 a = ",a+"<hr>");
+
+        c=a.toString();
+        document.write("a.toString() : "+c+"<hr>");
+
+        document.write("<h3>Date 객체로 현재 시간 알아내기</h3><hr>");
+        let date = new Date();
+        document.write("현재 시간 : "+date.toUTCString()+"<hr>");
+        document.write(date.getFullYear()+"년도<br>");
+        document.write(date.getMonth()+1+"월<br>");
+        document.write(date.getDate()+"일<br>");
+        document.write(date.getHours()+"시<br>");
+        document.write(date.getMinutes()+"분<br>");
+        document.write(date.getSeconds()+"초<br>");
+        document.write(date.getMilliseconds()+"밀리초<hr>");
+
+        var next = new Date(2023,7,15,12,12,12);
+        // next.setFullYear(2023);
+        // next.setMonth(7);
+        // next.setDate(15);
+        // next.setHours(12);
+        // next.setMinutes(12);
+        // next.setSeconds(12);
+        document.write("next.toLocaleString() : "+next.toLocaleString()+"<hr>");
+
+        document.write("<h3>페이지에 방문 초시간이 짝수이면 violet,홀수이면 lightskyblue 배경</h3>");
+        document.write("<p id='remaining'></p><hr>");
+
+        function changeBg(){
+            date = new Date();
+            if(date.getSeconds()%2===0){
+
+                document.body.style.backgroundColor="violet";
+            }else{
+                document.body.style.backgroundColor="lightskyblue";
+            }
+
+            // outStr="현재 시간 : "+date.getHours()+"시, "+date.getMinutes()+"분, "+date.getSeconds(),+"초<br>";
+            document.getElementById('remaining').innerHTML="현재 시간 : "+date.toLocaleString();
+            setTimeout(changeBg,1000);
+        }
+        changeBg();
+
+        var a1= new String("Boys and Girls");
+        var b1 = "!!";
+        document.write("a1 : "+a1+"<br>");
+        document.write("b1 : "+b1+"<br><hr>");
+
+        document.write(a1.charAt(0)+"<br>");
+        document.write(a1.concat(b1,"입니다")+"<br><hr>");
+        
+        //indexOf 처음 등장하는 위치를 반환 인덱스 넘버로
+
+        document.write(a1.indexOf("s") +"<br>");
+        document.write(a1.indexOf("AND")+"<br>");//값이 없으면 -1로 반환
+
+        document.write(a1.slice(5,8)+"<br><hr>"); //인덱스 5번부터 8번앞까지
+
+        document.write(a1.substr(5,3)+"<br>");
+        document.write(a1.toUpperCase()+"<br>");//대문자로 변경
+        document.write(a1.replace("and","or")+"<br>");//and 를 or 로 바꾸기
+        document.write("   kitae   ".trim()+"<br><hr>");//쓸대없는 공백을 지운다.
+
+        let sub = a1.split(" ");
+        document.write("a를 빈칸으로 분리<br>");
+        for(let i=0;i<sub.length;i++){
+            document.write("sub"+i+"="+sub[i]+"<br>");
+        }
+        document.write("<hr>String 메소드를 실행 후 a1와 b1 변함 없음<br>");
+        document.write("a1 : "+a1+"<br>");
+        document.write("b1 : "+b1+"<br>");
+
+        var randomint1 = Math.floor(Math.random()*9)+1;
+        var randomint2 = Math.floor(Math.random()*9)+1;//floor 내림
+        var ques = `${randomint1}*${randomint2}`;
+        var val = randomint1*randomint2;
+
+        // var user = prompt(ques+"의 값은 얼마입니까?");
+        // if(user === null){
+        //      document.write("구구단 연습을 종료합니다<hr>");
+        // }else{
+        //     if(user==val){
+        //         document.write("정답!"+ques+" = "+val+"입니다")
+        //     }else{
+        //          document.write("아니오!"+ques+" = "+val+"입니다")
+        //     }
+        // }
+
+
+        document.write("<img id='car' src='img/car1.jpg'>");
+        document.write("<br>")
+        document.write("<button onclick='changecar();'>사진바꾸기</button>")
+
+        function changecar(){
+            var rand = Math.floor(Math.random()*4)+1;
+            document.getElementById("car").src=`img/car${rand}.jpg`;    
+        }
+        
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온라인 프로필 </title>
+    <style>
+        section{
+            width:500px;
+            padding:15px;
+            border:5px solid gray;
+        }
+        body{
+            color:blue;
+        }
+        h2{
+            color:brown;
+            text-shadow: 5px 5px 3px #f00; /*가로거리, 세로거리, 번짐 정도 ,색상*/
+        }
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        .ng-font{
+            font-family:'Nanum Gothic',돋움;
+        }
+        p{
+            font-size: 20px;
+            line-height: e1.8;
+            
+        }
+        a{
+            text-decoration: none;/*밑줄 없앰*/
+        }
+        .edited{
+            text-decoration: line-through;/*취소선*/
+        }
+        .align-left{text-align:left ;border:1px solid black;}
+        .align-right{text-align:right;border:1px solid black;}
+        .align-center{text-align:center;border:1px solid black;}
+        .align-justify{text-justify:auto;border:1px solid black;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <section>
+            <h2>Who am I?</h2>
+            <p>프런트앤드 웹 기술(Front-end Web Tech.)에 관심이 많습니다<br>
+            현재 성남의 한 학원에서 코딩 중입니다.</p>
+        </section>
+    </div>
+    <div id ="container">
+        <h2 style="color:green;">이지스퍼블리싱의 미션</h2>
+        <p>사람에게 구체적으로 도움을 주는 책,<br>
+        우리는 열심히 사는 사람들에게 도움이 되고 싶습니다.<br>
+        <p>우리는 책을 출간하기 전에 질문할 것입니다.</p>
+        <p style="color:red; font-style:italic;">이책이 사람들에게 도움이 됩니까?</p>
+    </div>
+    <p class="ng-font">나눔고딕 웹 폰트 사용</p>
+
+    <p>다양한 기지로 인터넷에 접속할 수 있는 요즘,<br>
+    <span class="edited">HTML4</span>HTML5를 공부해야 할 때입니다.</p>
+    <p><a href="http://html.spec.whatwg.org/" target="_blank"><b>HTML4표준 규약 살펴보기
+    </b></a></p>
+
+    <p class="align-left">integer elementum</p>
+    <p class="align-right">integer elementum</p>
+    <p class="align-center">integer elementum</p>
+    <p class="align-justify">integer elementum</p>
+
+
+</body>
+</html>

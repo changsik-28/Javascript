@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Hello Javascript!!</h3>
+    <script>
+        document.write("<img id='imgs' src='img/강태리1.png' height='500px'>");
+        document.write("<br>");
+        document.write("<button onclick='changeImgs();'>사진바꾸기</button>");
+
+        function changeImgs(){
+            var rand = Math.floor(Math.random()*10)+1;
+            document.getElementById("imgs").src=`img/강태리${rand}.png`;
+        }
+        
+        document.write("<hr>");
+        ///////////////////////////////////////////////////////////////////
+        //Object 표기법
+        function inquiry(){
+            return this.balance;
+        }
+        function deposit(money){
+            this.balance += money;
+        }
+        function withdraw(money){
+            this.balance -= money;
+            
+        }
+
+        let account = new Object();
+        account.owner="황기태";
+        account.code="111";
+        account.balance = 35000;
+        account.inquiry = inquiry;
+        account.deposit = deposit;
+        account.withdraw = withdraw;
+
+        document.write("account : ");
+        document.write(account.owner + ", ");
+        document.write(account.code + ", ");
+        document.write(account.balance+ "<br>");
+
+        account.deposit(10000);
+        document.write("10000원 저금 후 잔액은 "+account.inquiry()+"<br>");
+        account.withdraw(5000);
+        document.write("5000원 인출 후 잔액은 " +account.inquiry()+"<br><hr>");
+        //////////////////////////////////////////////////////////////////
+        //리터럴 표기법
+        let account1={
+            owner : "임지아",
+            code : "111",
+            balance : 35000,
+
+            //메소드 작성
+            inquiry : function(){
+                return this.balance;
+            },
+            deposit : function(money){
+                this.balance += money;
+            },
+            withdraw : function(money){
+                this.balance -= money;
+            }
+        };
+        account1.deposit(1000000);
+        document.write("10000원 저금 후 잔액은 "+account1.inquiry()+"<br>");
+        account1.withdraw(65000);
+        document.write("5000원 인출 후 잔액은 " +account1.inquiry()+"<br><hr>");
+        /////////////////////////////////////////////////////////////////////////
+        //프로토 타입
+        //객체의 모양을 가진 틀
+        //프로토타입 Student 생성
+        function Student(name,score){
+            this.univ= "한국대학";
+            this.name = name;
+            this.score = score;
+            this.getGrade = function(){
+                if(this.score>80) return "A";
+                else if(this.score>60) return "B";
+                else return "F";
+            }
+        }
+        //객체 생성
+        let Kitae = new Student("황기태",40);
+        let jaemoon= new Student("임지아",93);
+
+        document.write(Kitae.univ+", "+Kitae.name+"의 학점은 "+Kitae.getGrade()+"입니다<br>");
+        document.write(jaemoon.univ+", "+jaemoon.name+"의 학점은 "+jaemoon.getGrade()+"입니다<br>")
+    </script>
+</body>
+</html>

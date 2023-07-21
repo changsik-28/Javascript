@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container ul{
+            border :1px dotted blue;
+        }
+        a[href]{
+            background:yellow;
+        }
+        [class ~= "button"]{
+            border:2px solid black;
+            box-shadow:rgba(0,0,0,0.4) 5px 5px;
+        }
+        ul.navi li:first-child{
+            border-top-left-radius: 1em;
+            border-bottom-left-radius: 1em;
+        }
+        ul.navi li:last-child{
+            border-top-right-radius: 1em;
+            border-bottom-right-radius: 1em;
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <header><h1>예약 방법 및 요금</h1></header>
+        <p>요안도라에 예약하려면?</p>
+        <ul>
+            <li>예약방법
+                <ul>
+                    <li>직접 통화</li>
+                    <li>문자 남기기</li>
+                </ul>
+            </li>
+            <li>요금
+                <ul>
+                    <li>1인 : 40,000원</li>
+                    <li>2인 : 60,000원</li>
+                    <li>3인 : 80,000원</li>
+                    <li>4인 : 100,000원</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <ul>
+        <li><a>메인메뉴 :</a></li>
+        <li><a href="#">메뉴1</a></li>
+        <li><a href="#">메뉴2</a></li>
+        <li><a href="#" class="button">메뉴3</a></li>
+        <li><a href="#" class="flat button">메뉴4</a></li>
+    </ul>
+    <ul class="navi">
+        <li class="home"><a href="#">Home</a></li>
+        <li id="html"><a href="#">HTML5</a></li>
+        <li id="css"><a href="#">CSS3</a></li>
+        <li id="jquery"><a href="#">JQuery</a></li>
+    </ul>
+    
+</body>
+</html>
