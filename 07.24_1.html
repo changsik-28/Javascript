@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>DOM 객체 p의 프로퍼티, 스타일, 이벤트 리스너</h3>
+    <hr>
+    <p id="firstP" style="color:blue;"
+    onclick="this.style.color='teal'">이것은<span id = "mySpan" style="color:red">문장입니다.</span></p>
+    <input type="button" value="스타일변경" onclick ="change()">
+
+    <hr>
+    
+    <p id="firstP1" style="color:blue" onclick="change1()">
+    여기를 <button style="color:red">클릭하세요</button></p>
+
+    <h3>this 활용</h3>
+    <hr>
+    <button onclick="change2(this, '30px','blue')">버튼</button>
+    <button onclick="change2(this, '30px','red')">버튼</button>
+    <div onclick="change2(this,'25px','orange')">여기를 클릭하면 크기와 색변경</div>
+
+    <script>
+
+        let p = document.getElementById("firstP");
+        let text = "p.id = "+p.id +"\n";
+        text +="p.tagName = "+p.tagName +"\n";
+        text +="p.innerHTML = "+p.innerHTML+"\n";
+        text +="p.onclick = "+p.onclick+"\n";
+        text +="p.childElementCount = "+p.childElementCount+"\n";
+        text +="너비 = "+p.offsetWidth+"\n";
+        text +="높이 = "+p.offsetHeight+"\n";
+        text +="객체의 출력 위치 = "+p.offsetLeft+"\n";
+        text +="객체의 출력 위치 = "+p.offsetTop+"\n";
+        // alert(text);
+
+        function change(){
+            var myspan=document.getElementById("mySpan");
+            myspan.style.border="3px dotted magenta";
+            myspan.style.color="green";
+            myspan.style.fontSize="40px"
+            myspan.style.fontWeight="bold";
+            myspan.style.display="block"
+            myspan.style.width="6em"
+            myspan.style.padding="6px";
+            myspan.style.margin="20px"
+            myspan.style.padding="10px"
+
+        }
+        function change1(){
+            let p1= document.getElementById("firstP1");
+            p1.innerHTML="나의 <img src='img/강태리8.png' style='width:400px'>그녀"
+        }
+    
+        function change2(i,px,col){
+            i.style.fontSize=px;
+            i.style.color=col;
+        }
+        
+    </script>
+</body>
+</html>
